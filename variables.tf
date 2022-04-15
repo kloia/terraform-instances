@@ -69,3 +69,11 @@ variable "master_max_size" {
 variable "master_desired_size" {
   default = 1
 }
+
+variable "access_key" {
+  default = ""
+}
+
+variable "secret_key" {
+  default = ""
+}

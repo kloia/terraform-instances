@@ -4,6 +4,7 @@ resource "aws_autoscaling_group" "asg" {
   min_size = var.min_size
   desired_capacity = var.desired_size
   tags = var.default_tags
+  wait_for_capacity_timeout = "10m"
 
   default_cooldown = var.cooldown
 
