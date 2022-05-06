@@ -19,15 +19,6 @@ resource "aws_security_group" "sg-lb-to-asg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  egress {
-    description = "SG-${var.cluster_name}-${var.environment}-lbtonode"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    self        = true
-  }
-
   ingress {
     description = "SG-${var.cluster_name}-${var.environment}-lbtonode"
     from_port   = 0
@@ -35,29 +26,44 @@ resource "aws_security_group" "sg-lb-to-asg" {
     protocol    = "-1"
     self        = true
   }
-  ingress {
-    description = "SG-${var.cluster_name}-${var.environment}-lbtonode-http"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = var.cidr_blocks
-  }
 
   ingress {
-    description = "SG-${var.cluster_name}-${var.environment}-lbtonode-https"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = var.cidr_blocks
+    description = "SG-${var.cluster_name}-${var.environment}-lbtonode"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
+  # ingress {
+  #   description = "SG-${var.cluster_name}-${var.environment}-lbtonode"
+  #   from_port   = 0
+  #   to_port     = 0
+  #   protocol    = "-1"
+  #   self        = true
+  # }
+  # ingress {
+  #   description = "SG-${var.cluster_name}-${var.environment}-lbtonode-http"
+  #   from_port   = 80
+  #   to_port     = 80
+  #   protocol    = "tcp"
+  #   cidr_blocks = var.cidr_blocks
+  # }
 
-    ingress {
-    description = "SG-${var.cluster_name}-${var.environment}-lbtonode-mgmt"
-    from_port   = 6443
-    to_port     = 6443
-    protocol    = "tcp"
-    cidr_blocks = var.cidr_blocks
-  }
+  # ingress {
+  #   description = "SG-${var.cluster_name}-${var.environment}-lbtonode-https"
+  #   from_port   = 443
+  #   to_port     = 443
+  #   protocol    = "tcp"
+  #   cidr_blocks = var.cidr_blocks
+  # }
+
+  # ingress {
+  #   description = "SG-${var.cluster_name}-${var.environment}-lbtonode-mgmt"
+  #   from_port   = 6443
+  #   to_port     = 6443
+  #   protocol    = "tcp"
+  #   cidr_blocks = var.cidr_blocks
+  # }
 }
 
 
