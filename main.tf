@@ -10,7 +10,6 @@ resource "aws_key_pair" "generated_key" {
   provisioner "local-exec" {
     command = <<-EOT
       echo '${tls_private_key.dev_key.private_key_pem}' > ./'${var.cluster_name}'-'${var.environment}'-key.pem
-      chmod 400 ./'${var.cluster_name}'-'${var.environment}'-key.pem
     EOT
   }
 
