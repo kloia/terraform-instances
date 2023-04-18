@@ -1,12 +1,12 @@
-# Terraform Instances
+# Provisioning K8s Cluster Instances with Terraform
+This Terraform code is designed to provision instances for a **Kubernetes cluster** based on **AWS EC2**. With this code, you can easily provision master and worker nodes, auto-scaling groups, and a load balancer.
 
-This terraform code developed for provision `k8s cluster` instances based on `AWS EC2`. You can easily provision master and worker nodes, auto-scaling groups, and load balancer. 
+### How to Use This Repository
+To use this repository, follow these steps:
 
-## How to use this repo
-- run `terraform init`
-
-- configure variables
-- run `terraform apply` (for external variable file `terraform apply -var-file=./var.hcl`)
+- Run `terraform init` to initialize Terraform.
+- Configure the variables for your environment.
+- Run `terraform apply` to provision the infrastructure. If you want to use an external variable file, run terraform apply -var-file=./var.hcl.
 
 
 ## Variables
@@ -35,4 +35,4 @@ This terraform code developed for provision `k8s cluster` instances based on `AW
 ||
 
 ## Contribution
-You can fork the repository and contrib repo via pull-requests . Never hesitate :smile:
+You can fork the repository and contrib repo via pull-requests . Never hesitate :smiley:
