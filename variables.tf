@@ -11,15 +11,15 @@ variable "region" {
 }
 
 variable "role" {
-  default = "arn:aws:iam::417732881703:role/eks-admin"
+  default = "arn:aws:iam::****:role/eks-admin"
 }
 
 variable "ami_id" {
-  default = "ami-08ca3fed11864d6bb"
+  default = "ami-***"
 }
 
 variable "vpc_id" {
-  default = "vpc-024f3e66"
+  default = "vpc-***"
 }
 
 variable "worker_instance_type" {
@@ -31,11 +31,11 @@ variable "master_instance_type" {
 }
 
 variable "subnet_id1" {
-  default = "subnet-ec04449a"
+  default = "subnet-***"
 }
 
 variable "subnet_id2" {
-  default = "subnet-f9b3fb9d"
+  default = "subnet-***"
 }
 
 variable "iam_policy" {
